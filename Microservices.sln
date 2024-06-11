@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Files", ".Files", "{810965
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "GettingStartedApp", "GettingStartedApp\GettingStartedApp.esproj", "{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,12 +24,19 @@ Global
 		{944489F8-5463-41CF-9AEF-FE6AFE3C18CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{944489F8-5463-41CF-9AEF-FE6AFE3C18CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{944489F8-5463-41CF-9AEF-FE6AFE3C18CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{944489F8-5463-41CF-9AEF-FE6AFE3C18CD} = {02E2B090-A883-442B-9AD5-FC45888A44EA}
+		{5556ADF2-A8C3-4EE1-A3C6-C58E7CAED1A4} = {02E2B090-A883-442B-9AD5-FC45888A44EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E00611D3-2A53-4B2A-BF3D-150A484FD271}
