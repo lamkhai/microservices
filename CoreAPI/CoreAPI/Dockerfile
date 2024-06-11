@@ -11,10 +11,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-1809 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CoreAPI/CoreAPI.csproj", "CoreAPI/"]
-RUN dotnet restore "./CoreAPI/CoreAPI.csproj"
+COPY ["CoreAPI.csproj", "."]
+RUN dotnet restore "./CoreAPI.csproj"
 COPY . .
-WORKDIR "/src/CoreAPI"
+WORKDIR "/src"
 RUN dotnet build "./CoreAPI.csproj" -c %BUILD_CONFIGURATION% -o /app/build
 
 FROM build AS publish
