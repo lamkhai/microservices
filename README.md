@@ -1,7 +1,17 @@
 # Microservices
 
 ## CoreAPI
+- OS: Windows
 - Docker hub: https://hub.docker.com/r/lamkhai/coreapi
+- Docker client:
+  - Build:
+	```
+	docker build -t lamkhai/coreapi .
+	```
+  - Run:
+	```
+	docker run -p 52915:8080 -p 52916:8081 --name=LamKhaiCoreAPI lamkhai/coreapi
+	```
 
 ## GettingStartedApp
 - OS: Linux
