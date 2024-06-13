@@ -1,0 +1,24 @@
+services:
+  app:
+    image: node:18-alpine
+    command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 127.0.0.1:3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: gettingstarted-network-mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: gettingstarted-password
+      MYSQL_DB: gettingstarted-db
+  gettingstarted-network-mysql:
+    image: mysql:8.0
+    volumes:
+      - gettingstarted-mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: gettingstarted-password
+      MYSQL_DATABASE: gettingstarted-db
+
+volumes:
+  gettingstarted-mysql:

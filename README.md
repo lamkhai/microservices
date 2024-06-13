@@ -17,7 +17,7 @@
 - OS: Linux
 - Docker hub: https://hub.docker.com/r/lamkhai/gettingstartedapp
 - Docker client:
-  - Build:
+  - Build image:
 	```
 	docker build -t lamkhai/gettingstartedapp .
 	```
@@ -70,3 +70,12 @@
 	node:18-alpine `
 	sh -c "yarn install && yarn run dev"
 	```
+  - Use a Compose file: GettingStartedApp\compose.yaml
+	- Run:
+	  ```
+	  docker compose up -d
+	  ```
+	- Tear it all down:
+	  ```
+	  docker compose down
+	  ```
