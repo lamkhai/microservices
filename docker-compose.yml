@@ -3,6 +3,27 @@ version: '3.4'
 services:
   coreapi:
     image: ${DOCKER_REGISTRY-}coreapi
+    container_name: LK-CoreAPI
     build:
       context: .
       dockerfile: CoreAPI\CoreAPI\Dockerfile
+    ports:
+      - 52915:8080
+      - 52916:8081
+    depends_on:
+      - coreapi.db
+  
+  coreapi.db:
+    image: postgres:11.4
+    container_name: LK-CoreAPI-DB
+    environment:
+      - POSTGRES_DB=CoreAPIDB
+      - POSTGRES_USER=lamkhai
+      - POSTGRES_PASSWORD=@Password
+    volumes:
+      - coreapi-db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+ 
+volumes:
+  coreapi-db-data:
