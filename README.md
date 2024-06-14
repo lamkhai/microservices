@@ -1,7 +1,7 @@
 # Microservices
 
 ## CoreAPI
-- OS: Windows
+- OS: Linux
 - Docker hub: https://hub.docker.com/r/lamkhai/coreapi
 - Docker client:
   - Build:
