@@ -10,7 +10,7 @@
 	```
   - Run:
 	```
-	docker run -p 52915:8080 -p 52916:8081 --name=LamKhaiCoreAPI lamkhai/coreapi
+	docker run -p 52915:8080 -p 52916:8081 --name=LK-CoreAPI lamkhai/coreapi
 	```
 
 ## GettingStartedApp
