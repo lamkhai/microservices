@@ -1,17 +1,7 @@
 # Microservices
 
 ## CoreAPI
-- OS: Linux
 - Docker hub: https://hub.docker.com/r/lamkhai/coreapi
-- Docker client:
-  - Build:
-	```
-	docker build -t lamkhai/coreapi .
-	```
-  - Run:
-	```
-	docker run -p 52915:8080 -p 52916:8081 --name=LK-CoreAPI lamkhai/coreapi
-	```
 
 ## GettingStartedApp
 - OS: Linux
@@ -60,7 +50,7 @@
 		```
   - Run with MySQL container:
 	```
-	docker run -dp 127.0.0.1:3000:3000 --name=LK-GettingStarted-LKTODO `
+	docker run -dp 127.0.0.1:3000:3000 --name=LK-GettingStarted `
 	-w /app -v "$(pwd):/app" `
 	--network gettingstarted-network `
 	-e MYSQL_HOST=gettingstarted-network-mysql `
