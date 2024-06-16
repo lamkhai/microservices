@@ -4,17 +4,18 @@ EXPOSE 8080
 EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG TARGETARCH
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["CoreAPI.csproj", "."]
-RUN dotnet restore "./CoreAPI.csproj"
+RUN dotnet restore "./CoreAPI.csproj" -a $TARGETARCH
 COPY . .
 WORKDIR "/src"
-RUN dotnet build "./CoreAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./CoreAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build -a $TARGETARCH
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./CoreAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./CoreAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false -a $TARGETARCH
 
 FROM base AS final
 WORKDIR /app
