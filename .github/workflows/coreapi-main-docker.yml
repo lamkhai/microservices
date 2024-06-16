@@ -1,4 +1,4 @@
-name: ci
+name: coreapi-main-docker
 
 on:
   push:
