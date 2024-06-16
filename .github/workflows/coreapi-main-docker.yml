@@ -25,14 +25,14 @@ jobs:
         name: Build and test
         uses: docker/build-push-action@v5
         with:
-          context: CoreAPI/CoreAPI
+          context: ./CoreAPI/CoreAPI
           target: build
           load: true
       -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./CoreAPI/CoreAPI
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
