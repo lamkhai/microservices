@@ -7,7 +7,7 @@
 	docker build -t lamkhai/coreapi .
 	```
   - Run:
-	- Without compose:
+	- Development (Without using compose):
 	  - Create network:
 		```
 	    docker network create coreapi-network-dev
@@ -20,4 +20,4 @@
 		```
 		docker run --name=LK-CoreAPI-Cli -p 52915:8080 --network=coreapi-network-dev -e ASPNETCORE_ENVIRONMENT=Development lamkhai/coreapi
 		``` 
-	- With compose:
+	- Staging (Using compose)
