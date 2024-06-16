@@ -32,9 +32,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          run: docker build -t lamkhai/coreapi --build-arg="TARGETARCH=amd64" .
-          #context: .
-          #platforms: linux/amd64,linux/arm64
+          context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           target: final
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
