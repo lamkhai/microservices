@@ -1,8 +1,10 @@
 using CoreAPI.Contracts;
 using CoreAPI.Database;
 using CoreAPI.Entities;
+using CoreAPI.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace CoreAPI.Controllers;
 
@@ -11,10 +13,12 @@ namespace CoreAPI.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly CoreAPIDBContext _DBContext;
+    private readonly IDistributedCache _distributedCache;
 
-    public ProductsController(CoreAPIDBContext DBContext)
+    public ProductsController(CoreAPIDBContext DBContext, IDistributedCache distributedCache)
     {
         _DBContext = DBContext;
+        _distributedCache = distributedCache;
     }
 
     [HttpDelete("{id}")]
@@ -27,6 +31,8 @@ public class ProductsController : ControllerBase
         }
 
         _DBContext.Remove(product);
+
+        await _distributedCache.RemoveAsync(GetProductIdCacheKey(id));
 
         return await _DBContext.SaveChangesAsync();
     }
@@ -43,9 +49,16 @@ public class ProductsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<Product?> Get(int id)
     {
-        return await _DBContext.Products
-            .AsNoTracking()
-            .FirstOrDefaultAsync(p => p.Id == id);
+        return await _distributedCache.GetAsync(GetProductIdCacheKey(id),
+            async token =>
+            {
+                var product = await _DBContext.Products
+                .AsNoTracking()
+                .FirstOrDefaultAsync(p => p.Id == id, token);
+
+                return product;
+            },
+            CacheOptions.DefaultExpiration);
     }
 
     [HttpPost]
@@ -76,6 +89,13 @@ public class ProductsController : ControllerBase
         product.Name = request.Name;
         product.Price = request.Price;
 
+        await _distributedCache.RemoveAsync(GetProductIdCacheKey(id));
+
         return await _DBContext.SaveChangesAsync();
+    }
+
+    private string GetProductIdCacheKey(int id)
+    {
+        return $"products-{id}";
     }
 }

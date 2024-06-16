@@ -8,8 +8,8 @@ services:
       context: .
       dockerfile: CoreAPI\CoreAPI\Dockerfile
     ports:
-      - 8080
-      #- 8081
+      - 52917:8080
+      #- 52918:8081
     depends_on:
       - coreapi.db
   
@@ -23,7 +23,14 @@ services:
     volumes:
       - coreapi-db-data:/var/lib/postgresql/data
     ports:
-      - 5434:5432
+      - 5432
+
+  coreapi.cache:
+    image: redis:latest
+    container_name: LK-CoreAPI-Cache
+    restart: always
+    ports:
+      - 6379
  
 volumes:
   coreapi-db-data:
