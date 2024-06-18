@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\coreangular.client\coreangular.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
 
