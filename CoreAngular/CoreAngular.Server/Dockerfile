@@ -15,7 +15,6 @@ FROM with-node AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["CoreAngular/CoreAngular.Server/CoreAngular.Server.csproj", "CoreAngular/CoreAngular.Server/"]
-COPY ["CoreAngular/coreangular.client/coreangular.client.esproj", "CoreAngular/coreangular.client/"]
 RUN dotnet restore "./CoreAngular/CoreAngular.Server/CoreAngular.Server.csproj"
 COPY . .
 WORKDIR "/src/CoreAngular/CoreAngular.Server"
