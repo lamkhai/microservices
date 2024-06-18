@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{6713
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{42DA4498-2989-4B64-9199-2E914E0556CF}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\coreangular-main-docker.yml = .github\workflows\coreangular-main-docker.yml
 		.github\workflows\coreapi-main-docker.yml = .github\workflows\coreapi-main-docker.yml
 	EndProjectSection
 EndProject
