@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - CoreAPI/**
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:

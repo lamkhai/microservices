@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - CoreAngular/**
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -27,14 +30,16 @@ jobs:
         name: Build and test
         uses: docker/build-push-action@v5
         with:
-          context: ./CoreAngular/CoreAngular.Server
+          context: .
+          file: ./microservices/CoreAngular/CoreAngular.Server/Dockerfile
           target: build
           load: true
       -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./CoreAngular/CoreAngular.Server
+          context: .
+          file: ./microservices/CoreAngular/CoreAngular.Server/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
