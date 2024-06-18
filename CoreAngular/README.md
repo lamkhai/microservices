@@ -2,9 +2,9 @@
 - OS: Linux
 - Docker hub: https://hub.docker.com/r/lamkhai/coreangular
 - Docker client:
-  - Build in the microservices folder:
+  - Build:
 	```
-	docker build -t lamkhai/coreangular -f CoreAngular/CoreAngular.Server/Dockerfile .
+	docker build -t lamkhai/coreangular .
 	```
   - Run:
 	- Development (Without using compose):

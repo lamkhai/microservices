@@ -14,10 +14,10 @@ RUN npm install -g @angular/cli
 FROM with-node AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CoreAngular/CoreAngular.Server/CoreAngular.Server.csproj", "CoreAngular/CoreAngular.Server/"]
-RUN dotnet restore "./CoreAngular/CoreAngular.Server/CoreAngular.Server.csproj"
+COPY ["CoreAngular.Server.csproj", "."]
+RUN dotnet restore "./CoreAngular.Server.csproj"
 COPY . .
-WORKDIR "/src/CoreAngular/CoreAngular.Server"
+WORKDIR "/src"
 RUN dotnet build "./CoreAngular.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
