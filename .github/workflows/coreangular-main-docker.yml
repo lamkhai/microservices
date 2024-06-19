@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/coreangular-main-docker.yml
       - CoreAngular/**
   pull_request:
     branches:
@@ -30,14 +31,14 @@ jobs:
         name: Build and test
         uses: docker/build-push-action@v5
         with:
-          context: ./CoreAngular/CoreAngular.Server
+          context: ./CoreAngular
           target: build
           load: true
       -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./CoreAngular/CoreAngular.Server
+          context: ./CoreAngular
           platforms: linux/amd64,linux/arm64
           push: true
           target: final

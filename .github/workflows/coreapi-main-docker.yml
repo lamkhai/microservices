@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/coreapi-main-docker.yml
       - CoreAPI/**
   pull_request:
     branches:
