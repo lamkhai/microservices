@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAPI", "CoreAPI\CoreAPI\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Files", ".Files", "{810965A3-18F4-4DF4-B2F1-98DA663CDFB0}"
 	ProjectSection(SolutionItems) = preProject
+		.env = .env
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -30,8 +31,11 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "coreangular.client", "CoreA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreAngular", "CoreAngular", "{2A008CE7-C8F5-4CEC-9019-AF631E7B4431}"
 	ProjectSection(SolutionItems) = preProject
+		CoreAngular\Dockerfile = CoreAngular\Dockerfile
 		CoreAngular\README.md = CoreAngular\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngular.Service", "CoreAngular\CoreAngular.Service\CoreAngular.Service.csproj", "{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{8B7427A8-5852-4E61-B875-0A238AD7D878}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B7427A8-5852-4E61-B875-0A238AD7D878}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B7427A8-5852-4E61-B875-0A238AD7D878}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{42DA4498-2989-4B64-9199-2E914E0556CF} = {67133897-3738-4102-92BB-0756A5474FC2}
 		{6DF95CD4-F0F6-47C1-B187-EFB8A79ADCF7} = {2A008CE7-C8F5-4CEC-9019-AF631E7B4431}
 		{8B7427A8-5852-4E61-B875-0A238AD7D878} = {2A008CE7-C8F5-4CEC-9019-AF631E7B4431}
+		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81} = {2A008CE7-C8F5-4CEC-9019-AF631E7B4431}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E00611D3-2A53-4B2A-BF3D-150A484FD271}

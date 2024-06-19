@@ -1,14 +1,26 @@
 version: '3.4'
 
 services:
+  coreangular:
+    environment:
+      - ASPNETCORE_HTTP_PORTS=$inport_coreangular
+    ports:
+      - $inport_coreangular
+      
   coreapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Staging
-      - ASPNETCORE_HTTP_PORTS=8080
-      #- ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_HTTP_PORTS=$inport_coreapi
     ports:
-      - 52917:8080
-      #- 52918:8081
+      - $inport_coreapi
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+ 
+  coreapi.db:
+    ports:
+      - $inport_coreapi_db
+
+  coreapi.cache:
+    ports:
+      - $inport_coreapi_cache

@@ -22,6 +22,6 @@
 	    ```
 	  - Run via Container (Dockerfile) or via the following command:
 		```
-		docker run --name=LK-CoreAPI-Cli -p 52915:8080 --network=coreapi-network-dev -e ASPNETCORE_ENVIRONMENT=Development lamkhai/coreapi
+		docker run --name=LK-CoreAPI-Cli -p 52915:8082 --network=coreapi-network-dev -e ASPNETCORE_ENVIRONMENT=Development lamkhai/coreapi
 		``` 
 	- Staging (Using compose)

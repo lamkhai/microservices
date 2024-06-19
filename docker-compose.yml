@@ -1,36 +1,49 @@
 version: '3.4'
 
+networks:
+  network_core:
+  network_coreapi:
+
 services:
+  coreangular:
+    image: lamkhai/coreangular
+    container_name: LK-CoreAngular
+    networks:
+      - network_core
+    build:
+      context: .
+      dockerfile: CoreAngular\CoreAngular.Server\Dockerfile
+
   coreapi:
-    image: ${DOCKER_REGISTRY-}coreapi
+    image: lamkhai/coreapi
     container_name: LK-CoreAPI
+    networks:
+      - network_core
+      - network_coreapi
     build:
       context: .
       dockerfile: CoreAPI\CoreAPI\Dockerfile
-    ports:
-      - 52917:8080
-      #- 52918:8081
     depends_on:
       - coreapi.db
   
   coreapi.db:
     image: postgres:11.4
     container_name: LK-CoreAPI-DB
+    networks:
+      - network_coreapi
     environment:
       - POSTGRES_DB=CoreAPIDB
       - POSTGRES_USER=lamkhai
       - POSTGRES_PASSWORD=@Password
     volumes:
       - coreapi-db-data:/var/lib/postgresql/data
-    ports:
-      - 5432
 
   coreapi.cache:
     image: redis:latest
     container_name: LK-CoreAPI-Cache
+    networks:
+      - network_coreapi
     restart: always
-    ports:
-      - 6379
  
 volumes:
   coreapi-db-data:

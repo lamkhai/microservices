@@ -21,9 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\coreangular.client\coreangular.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
+    <ProjectReference Include="..\coreangular.client\coreangular.client.esproj" />
+    <ProjectReference Include="..\CoreAngular.Service\CoreAngular.Service.csproj" />
   </ItemGroup>
 
 </Project>
