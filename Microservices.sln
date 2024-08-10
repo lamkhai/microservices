@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\coreapi-main-docker.yml = .github\workflows\coreapi-main-docker.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngular.Server", "CoreAngular\CoreAngular.Server\CoreAngular.Server.csproj", "{6DF95CD4-F0F6-47C1-B187-EFB8A79ADCF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAngular.Server", "CoreAngular\CoreAngular.Server\CoreAngular.Server.csproj", "{6DF95CD4-F0F6-47C1-B187-EFB8A79ADCF7}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "coreangular.client", "CoreAngular\coreangular.client\coreangular.client.esproj", "{8B7427A8-5852-4E61-B875-0A238AD7D878}"
 EndProject
@@ -35,7 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreAngular", "CoreAngular"
 		CoreAngular\README.md = CoreAngular\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngular.Service", "CoreAngular\CoreAngular.Service\CoreAngular.Service.csproj", "{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAngular.Service", "CoreAngular\CoreAngular.Service\CoreAngular.Service.csproj", "{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAPI.Data", "CoreAPI\CoreAPI.Data\CoreAPI.Data.csproj", "{3E0F7D21-A0BA-4F1E-9BB5-31A3F2AFB5D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAPI.Data.DBContext", "CoreAPI\CoreAPI.Data.DBContext\CoreAPI.Data.DBContext.csproj", "{46A343DA-AA8D-4A49-99A4-F73DF9633F79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,14 @@ Global
 		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0F7D21-A0BA-4F1E-9BB5-31A3F2AFB5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0F7D21-A0BA-4F1E-9BB5-31A3F2AFB5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0F7D21-A0BA-4F1E-9BB5-31A3F2AFB5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0F7D21-A0BA-4F1E-9BB5-31A3F2AFB5D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A343DA-AA8D-4A49-99A4-F73DF9633F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A343DA-AA8D-4A49-99A4-F73DF9633F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A343DA-AA8D-4A49-99A4-F73DF9633F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A343DA-AA8D-4A49-99A4-F73DF9633F79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +96,8 @@ Global
 		{6DF95CD4-F0F6-47C1-B187-EFB8A79ADCF7} = {2A008CE7-C8F5-4CEC-9019-AF631E7B4431}
 		{8B7427A8-5852-4E61-B875-0A238AD7D878} = {2A008CE7-C8F5-4CEC-9019-AF631E7B4431}
 		{08BDE7FA-05CB-4DD6-8A0E-A1B7E5638F81} = {2A008CE7-C8F5-4CEC-9019-AF631E7B4431}
+		{3E0F7D21-A0BA-4F1E-9BB5-31A3F2AFB5D8} = {02E2B090-A883-442B-9AD5-FC45888A44EA}
+		{46A343DA-AA8D-4A49-99A4-F73DF9633F79} = {02E2B090-A883-442B-9AD5-FC45888A44EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E00611D3-2A53-4B2A-BF3D-150A484FD271}

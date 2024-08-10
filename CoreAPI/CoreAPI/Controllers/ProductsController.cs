@@ -1,6 +1,6 @@
-using CoreAPI.Contracts;
-using CoreAPI.Database;
-using CoreAPI.Entities;
+using CoreAPI.Data.DBContext;
+using CoreAPI.Data.Entities;
+using CoreAPI.Data.Models.Requests;
 using CoreAPI.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

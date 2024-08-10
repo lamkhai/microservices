@@ -1,7 +1,7 @@
-﻿using CoreAPI.Entities;
+﻿using CoreAPI.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CoreAPI.Database;
+namespace CoreAPI.Data.DBContext;
 
 public sealed class CoreAPIDBContext(DbContextOptions<CoreAPIDBContext> options) : DbContext(options)
 {

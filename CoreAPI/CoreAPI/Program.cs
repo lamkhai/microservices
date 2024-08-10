@@ -1,4 +1,4 @@
-using CoreAPI.Database;
+using CoreAPI.Data.DBContext;
 using CoreAPI.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,8 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<CoreAPIDBContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DBContext")));
+DataDBContextSetup.AddDbContext(builder.Services, builder.Configuration.GetConnectionString("DBContext"));
 
 builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = builder.Configuration.GetConnectionString("Cache"));
@@ -26,8 +25,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
     app.UseSwaggerUI();
 }
 
-app.ApplyMigrations();
-
+await app.MigrateDbContext<CoreAPIDBContext>();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

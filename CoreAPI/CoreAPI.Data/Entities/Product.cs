@@ -1,4 +1,4 @@
-﻿namespace CoreAPI.Entities;
+﻿namespace CoreAPI.Data.Entities;
 
 public sealed class Product
 {

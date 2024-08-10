@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CoreAPI.Contracts;
+namespace CoreAPI.Data.Models.Requests;
 
 public class UpdateProductRequest
 {
