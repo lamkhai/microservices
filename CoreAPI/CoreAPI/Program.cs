@@ -1,10 +1,18 @@
 using CoreAPI.Data.DBContext;
 using CoreAPI.Extensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+DataDBContextSetup.AddServices(builder.Services);
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+                    options.SlidingExpiration = true;
+                });
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,6 +36,8 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 await app.MigrateDbContext<CoreAPIDBContext>();
 app.UseHttpsRedirection();
 
+app.UseCookiePolicy();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

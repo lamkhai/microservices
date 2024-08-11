@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoreAPI.Data.Core.Services;
+using CoreAPI.Data.DBContext.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -13,5 +15,10 @@ public static class DataDBContextSetup
                                   b => b.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name)
             )
         );
+    }
+
+    public static void AddServices(IServiceCollection services)
+    {
+        services.AddScoped<IConstantSQLService, ConstantPostgreSQLService>();
     }
 }
