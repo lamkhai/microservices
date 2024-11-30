@@ -44,6 +44,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAPI.Data.Core", "CoreAPI\CoreAPI.Data.Core\CoreAPI.Data.Core.csproj", "{F442CE38-8085-4C08-920A-2688961104E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreReact", "CoreReact", "{485ABFBB-1D77-42BB-B88F-64FC7C774737}"
+	ProjectSection(SolutionItems) = preProject
+		CoreReact\README.md = CoreReact\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreReact.Server", "CoreReact\CoreReact.Server\CoreReact.Server.csproj", "{DB938D7E-2546-4FE1-8669-691CA7D5786E}"
 EndProject
